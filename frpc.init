@@ -1,0 +1,51 @@
+[common]
+server_addr = 119.45.26.133
+#服务器地址
+server_port = 5443
+#服务器端口
+token = yGlHDLwnlZMOYu2S
+#token（理解为密码）
+
+
+#FRPC服务端一键脚本地址：https://github.com/MvsCode/frps-onekey
+#FRPC客户端docker地址：https://registry.hub.docker.com/r/stilleshan/frpc/
+#其他设置参考此链接 https://gofrp.org/docs/features/
+
+# tcp & udp 设置参考
+[NAS_tcp_name]
+type = tcp
+#http协议也可以是https
+local_ip = 10.0.1.111
+local_port = 5000
+#设备的内网端口
+remote_port = 5000
+#设备的外网端口
+use_encryption = true #加密
+use_compression = true #压缩
+
+[udp_name]
+type = udp
+local_ip = 10.0.1.111
+local_port = 995
+remote_port = 995
+use_encryption = true #加密
+use_compression = true #压缩
+
+
+# HTTP & HTTPS设置参考
+[DSM_HTTP]
+type = http
+local_ip = 192.168.1.2
+local_port = 5000
+remote_port = 5000
+custom_domain = nas.xxx.com
+# 选择一个可用的子域名，你的访问地址将会是http://nas.xxx.com，服务器端必须已绑定顶级域名，否则不要设置
+#custom_domains = nas.xxx.com
+#如果你有自己的域名，可以设置你自己的域名，先将自己的顶级域名解析到nas.xxx.com(用CNAME记录，不要用A记录)
+
+[DSM_HTTPS]
+type = https
+local_ip = 192.168.1.2
+local_port = 5001
+remote_port = 5001
+custom_domain = nas.xxx.com
