@@ -9,6 +9,8 @@ token = yGlHDLwnlZMOYu2S
 
 #FRPC服务端一键脚本地址：https://github.com/MvsCode/frps-onekey
 #FRPC客户端docker地址：https://registry.hub.docker.com/r/stilleshan/frpc/
+#https://github.com/stilleshan/frpc
+#docker run -d --name=frpc --restart=always --network=host -v /root/frpc/frpc.ini:/frp/frpc.ini stilleshan/frpc
 #其他设置参考此链接 https://gofrp.org/docs/features/
 
 # tcp & udp 设置参考
